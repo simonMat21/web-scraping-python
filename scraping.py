@@ -3,11 +3,16 @@
 
 # pip install selenium
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+# importing necessary things
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import time
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+# for just taking one element
 
 # driver = webdriver.Chrome()
 # query="laptop"
@@ -16,6 +21,9 @@ import time
 # print(elem.text)
 # time.sleep(2)
 # driver.close()
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+# for taking more than one element
 
 # driver = webdriver.Chrome()
 # query="shirt" # put your query here
@@ -29,6 +37,8 @@ import time
 # # time.sleep(2)
 # driver.close()
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------
+# for taking from multiple pages and make them into a html file and put it in a data file
 
 driver = webdriver.Chrome()
 query="shirt" # put your query here
@@ -41,8 +51,7 @@ for i in range(1,2):
         with open(f"data/{query}_{fileNo}.html","w",encoding="utf-8") as f:
             f.write(d)
             fileNo+=1
-        # print(d)
-        # print("-"*30)
     print(f"got {len(elems)} elements")
-# time.sleep(2)
 driver.close()
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------
